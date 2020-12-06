@@ -3,7 +3,6 @@ package com.daar.project3;
 import java.io.File;
 import java.util.List;
 
-import org.apache.tika.Tika;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -25,23 +24,6 @@ public class DaarProject3Application {
 	private ResumeRepository repository;
     private File file = new File("resumes");
     private String[] pathnames = file.list();
-	
-	// Add resumes in PDF and Word format and located in the resumes directory 
-	@PostMapping("/saveAll")
-	public void saveAll() {
-		deleteAll();
-		for (String pathname : pathnames) {
-			try {
-				File newFile = new File("resumes/"+pathname);
-	            String content = new Tika().parseToString(newFile);
-	            Resume resume = new Resume();
-	            resume.body = content;
-	            repository.save(resume);
-			} catch (final Exception e) {
-	            e.printStackTrace();
-	        }
-		}
-	}
 	
 	// Delete the given resume
 	@PostMapping("/deleteResume")
