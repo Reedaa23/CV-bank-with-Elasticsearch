@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.daar.project3.model.Resume;
@@ -25,13 +25,6 @@ public class DaarProject3Application {
 	private ResumeRepository repository;
     private File file = new File("resumes");
     private String[] pathnames = file.list();
-	
-    // Add a resume or list of resumes in JSON format
-	@PostMapping("/saveResume")
-	public int saveResume(@RequestBody List<Resume> resumes) {
-		repository.saveAll(resumes);
-		return resumes.size();
-	}
 	
 	// Add resumes in PDF and Word format and located in the resumes directory 
 	@PostMapping("/saveAll")
@@ -69,8 +62,8 @@ public class DaarProject3Application {
 	}
 	
 	// Get resumes containing the given skills/words
-	@GetMapping("/findByBody/{body}")
-	public List<Resume> findByBody(@PathVariable String body) {
+	@GetMapping("/findByBody")
+	public List<Resume> findByBody(@RequestParam String body) {
 		return repository.findByBody(body);
 	}
 
