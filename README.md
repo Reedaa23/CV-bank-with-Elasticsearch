@@ -14,4 +14,5 @@ You can upload CVs and then query the CV database using one or more key words.
     <li>In src/test you will find a Postman collection of some queries to try and some JUnit tests.</li>
     <li>To test the application, you'll find in the resumes folder two CVs in PDF and Word formats, royalty-free.
     <li>This project suppose that the backend is running on http://localhost:8080.</li>
+    <li>A part from the front end, you can use http://localhost:8080/deleteAll (POST URL) and http://localhost:8080/findAll (GET URL) to respectively remove and get all the resumes.
 </ul>
