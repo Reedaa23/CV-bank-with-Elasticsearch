@@ -20,7 +20,7 @@ FileUploadService fileUploadService;
 	
 	@CrossOrigin(origins = "*")
 	@PostMapping
-	public void uploadFile(@RequestParam("files") List<MultipartFile> files) throws IllegalStateException, IOException {
-		fileUploadService.uploadFile(files);
+	public void uploadFiles(@RequestParam("files") List<MultipartFile> files) throws IllegalStateException, IOException {
+		fileUploadService.uploadFiles(files);
 	}
 }

@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "6f434698-e8ea-4d3d-af73-5943b0f8402b",
+		"name": "GET and POST tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all resumes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/findAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"findAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload some resumes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"value": null,
+							"type": "file"
+						},
+						{
+							"key": "files",
+							"value": null,
+							"type": "file"
+						},
+						{
+							"key": "files",
+							"value": null,
+							"type": "file",
+							"disabled": true
+						},
+						{
+							"key": "files",
+							"value": null,
+							"type": "file",
+							"disabled": true
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all resumes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/findAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"findAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get resumes containing Java and Docker",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/findByBody?body=Java,Docker",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"findByBody"
+					],
+					"query": [
+						{
+							"key": "body",
+							"value": "Java,Docker"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove all resumes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deleteAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deleteAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all resumes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\" : \"1\",\r\n        \"firstName\" : \"peter\",\r\n        \"lastName\" : \"smith\",\r\n        \"age\" : 20\r\n    },\r\n    {\r\n        \"id\" : \"2\",\r\n        \"firstName\" : \"PETER\",\r\n        \"lastName\" : \"Brown\",\r\n        \"age\" : 30\r\n    },\r\n    {\r\n        \"id\" : \"3\",\r\n        \"firstName\" : \"Mary\",\r\n        \"lastName\" : \"taylor\",\r\n        \"age\" : 20\r\n    },\r\n    {\r\n        \"id\" : \"4\",\r\n        \"firstName\" : \"Lauren\",\r\n        \"lastName\" : \"Jons\",\r\n        \"age\" : 20\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/findAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"findAll"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

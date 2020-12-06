@@ -20,12 +20,11 @@ public class FileUploadService {
 	
 	// Needed repository extending the Elasticsearch repository
 	@Autowired
-	private ResumeRepository repository;
+	public ResumeRepository repository;
 	
 	// Upload and add resumes in PDF and Word format
-	public void uploadFile(List<MultipartFile> files) throws IllegalStateException, IOException {
+	public void uploadFiles(List<MultipartFile> files) throws IllegalStateException, IOException {
 		try {
-			repository.deleteAll();
 			for (MultipartFile file: files) {
 				Path tempFile = Files.createTempFile("temp-", ".tmp");
 				file.transferTo(tempFile);
